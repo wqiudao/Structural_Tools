@@ -60,7 +60,10 @@ def makedalidb(src_directory,random_number=1000):
 	# print(new_names_dali2symbol)
 
 
-	command = ['chmod', '-R', '+x', 'bin_dali']
+	command = ['chmod', '-R', '+x', os.path.dirname(os.path.abspath(__file__))+'/bin_dali']
+	
+	
+	
 	result = subprocess.run(command, check=True, capture_output=True, text=True)
 
 		
@@ -88,7 +91,9 @@ def makedalidb(src_directory,random_number=1000):
 		print(stderr.decode('utf-8'))  # 如果有错误，可以打印错误信息 entry 
  
 	ref_dali_db=f"{os.getcwd()}/{dest_directory}"
-	print(f"ref_dali_db={ref_dali_db}")
+
+	print(f"pdb2dalidb.py ipt.pdb {ref_dali_db}")	
+	
 	
 	log_file=open(dest_directory+".dali_ref.log", 'w')
 	log_file.write(f"pdb2dalidb.py ipt.pdb <ref_dali_db>\n\n")	
