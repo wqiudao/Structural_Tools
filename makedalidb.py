@@ -59,6 +59,10 @@ def makedalidb(src_directory,random_number=1000):
 	# print(new_names_dali)
 	# print(new_names_dali2symbol)
 
+
+	command = ['chmod', '-R', '+x', 'bin_dali']
+	result = subprocess.run(command, check=True, capture_output=True, text=True)
+
 		
 	perl_script = os.path.dirname(os.path.abspath(__file__))+'/bin_dali/import.pl'
 
@@ -108,6 +112,24 @@ if __name__ == "__main__":
 	# print(os.path.dirname(os.path.abspath(__file__)))
 	
 	print(f"Files copied and renamed. Log saved to {src_directory}_dali")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
