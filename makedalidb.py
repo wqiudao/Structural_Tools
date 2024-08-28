@@ -1,3 +1,5 @@
+#!/home/miniconda3/miniconda3/envs/CRISPR_Cas_Finder/bin/python 
+#  chmod -R +x bin_dali
 #
 # makedalidb.py was designed to make `import.pl` easier to use, by wqiudao widthin 2024.
 # bin_dali
@@ -66,26 +68,27 @@ def makedalidb(src_directory,random_number=1000):
 		print(filename)
 		print(new_names_dali2symbol[filename])
 		
-		# µ÷ÓÃ Perl ½Å±¾£¬²¢´«µÝÃüÁîÐÐ²ÎÊý  dest_directory
+		# 调用 Perl 脚本，并传递命令行参数  dest_directory
 		result = subprocess.Popen(
 			['perl', perl_script, '--pdbfile', filename, '--pdbid', new_names_dali2symbol[filename], '--dat', dest_directory, '--clean'],stdout=subprocess.PIPE,stderr=subprocess.PIPE
 		)
 
-		# # Êä³ö Perl ½Å±¾µÄ½á¹û
+		# # 输出 Perl 脚本的结果
 		# print(stdout)
-		# print(stderr)  # Èç¹ûÓÐ´íÎó£¬¿ÉÒÔ´òÓ¡´íÎóÐÅÏ¢
+		# print(stderr)  # 如果有错误，可以打印错误信息
 
 		stdout, stderr = result.communicate()
 
-		# Êä³ö½á¹û
+		# 输出结果
 		print(stdout.decode('utf-8'))
-		print(stderr.decode('utf-8'))  # Èç¹ûÓÐ´íÎó£¬¿ÉÒÔ´òÓ¡´íÎóÐÅÏ¢
+		print(stderr.decode('utf-8'))  # 如果有错误，可以打印错误信息 entry 
  
 	ref_dali_db=f"{os.getcwd()}/{dest_directory}"
 	print(f"ref_dali_db={ref_dali_db}")
 	
 	log_file=open(dest_directory+".dali_ref.log", 'w')
-	log_file.write(f"ref_dali_db={ref_dali_db}\n")	
+	log_file.write(f"pdb2dalidb.py ipt.pdb <ref_dali_db>\n\n")	
+	log_file.write(f"pdb2dalidb.py ipt.pdb {ref_dali_db}\n")	
 	log_file.close()
  
 	
@@ -105,25 +108,6 @@ if __name__ == "__main__":
 	# print(os.path.dirname(os.path.abspath(__file__)))
 	
 	print(f"Files copied and renamed. Log saved to {src_directory}_dali")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
