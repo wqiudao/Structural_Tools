@@ -92,12 +92,19 @@ def makedalidb(src_directory,random_number=1000):
  
 	ref_dali_db=f"{os.getcwd()}/{dest_directory}"
 
-	print(f"pdb2dalidb.py ipt.pdb {ref_dali_db}")	
+
+
+
+		
+	run_script = os.path.dirname(os.path.abspath(__file__))+'/pdb2dalidb.py'
+
+
+	print(f"python {run_script}  ipt.pdb {ref_dali_db}\n")	
 	
 	
 	log_file=open(dest_directory+".dali_ref.log", 'w')
-	log_file.write(f"pdb2dalidb.py ipt.pdb <ref_dali_db>\n\n")	
-	log_file.write(f"pdb2dalidb.py ipt.pdb {ref_dali_db}\n")	
+	log_file.write(f"python {run_script} ipt.pdb <ref_dali_db>\n\n")	
+	log_file.write(f"python {run_script} ipt.pdb {ref_dali_db}\n")	
 	log_file.close()
  
 	
@@ -117,26 +124,5 @@ if __name__ == "__main__":
 	# print(os.path.dirname(os.path.abspath(__file__)))
 	
 	print(f"Files copied and renamed. Log saved to {src_directory}_dali")
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
