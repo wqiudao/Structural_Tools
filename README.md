@@ -4,4 +4,4 @@ This package provides an inference pipeline of structural-search. DALI (DaliLite
 
 # 
 
-chmod -R +x bin_dali
+
