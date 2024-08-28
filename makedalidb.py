@@ -1,5 +1,3 @@
-#!/home/miniconda3/miniconda3/envs/CRISPR_Cas_Finder/bin/python 
-#  chmod -R +x bin_dali
 #
 # makedalidb.py was designed to make `import.pl` easier to use, by wqiudao widthin 2024.
 # bin_dali
