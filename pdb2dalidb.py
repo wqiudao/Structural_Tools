@@ -1,6 +1,3 @@
-#!/home/miniconda3/miniconda3/envs/CRISPR_Cas_Finder/bin/python 
-#  chmod -R +x bin_dali
-#
 # pdb2dalidb.py was designed to make `dali.pl` easier to use, by wqiudao widthin 2024.
 # bin_dali
 # The `bin_dali` folder contains all the executable files of the Dali suite, and the execution of `pdb2dalidb.py` depends on the `bin_dali` folder.
