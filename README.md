@@ -6,5 +6,4 @@ This package provides an inference pipeline of structural-search. DALI (DaliLite
 
 最长，70 字符
 
-crrna突变
 https://8664bc44-6993-4df4-bff4-d3f8270b731c-00-3tpg62fqzsjku.worf.replit.dev/
