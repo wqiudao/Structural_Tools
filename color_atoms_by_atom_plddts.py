@@ -1,11 +1,18 @@
 import json
 from pymol import cmd
+
+"""
+Set colors for atoms in the loaded PDB file based on the atom_plddts values from the JSON file.
+Parameters:
+- `json_file`: Path to the JSON file containing the atom_plddts values
+
+color_atoms_by_plddt json_file
+
+"""
+
+
 def color_atoms_by_plddt(json_file):
-	"""
-	Set colors for atoms in the loaded PDB file based on the atom_plddts values from the JSON file.
-	Parameters:
-	- `json_file`: Path to the JSON file containing the atom_plddts values
-	"""
+
 	with open(json_file, 'r') as f:
 		data = json.load(f)
 	plddts = data["atom_plddts"]
